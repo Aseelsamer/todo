@@ -6,7 +6,7 @@
 ### Author: Aseel Samer
 
 ### Links and Resources
-![Lab 31](https://github.com/Aseelsamer/todo)
+-[Lab 31](https://github.com/Aseelsamer/todo)
 
 
 ### How to initialize/run your application (where applicable)
