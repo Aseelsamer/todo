@@ -2,7 +2,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ToDo from './components/todo.js';
+import ToDo from './components/todo';
 import './App.css';
 
 export default class App extends React.Component {
