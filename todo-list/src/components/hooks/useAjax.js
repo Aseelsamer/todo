@@ -1,42 +1,20 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import axios from 'axios';
 
 const useAjax = () => {
-  console.log("useAjax !!!")
 
-  const [response, setResponse] = useState({});
+  const todoAPI = 'https://husam278-api-server.herokuapp.com/api/todo';
+  const handler = (url, method, body) => {
+    return axios({
+      method: method,
+      url: url,
+      data: body
+    }).then(data => data.data)
+  }
 
-  const setRequestParams = (options) => {
-
-    const method = options.method;
-    
-    let req = { 
-      method: options.method,
-      url: options.url,
-      headers: options.headers
-    };
-
-    if (method === /^post$||^put$/i) req = { ...req, body:  options.body };
-    return req;
-  };
-
-  const useAxios = async (options) => {
-    console.log("useAxios!!")
-    console.log("options >>>> ", options)
-    let results = await axios(
-      options
-    ).catch(function (error) {
-      console.log("error: ");
-      console.log(error)
-    })
-    console.log("results.data -->  ", results.data)
-    setResponse(results.data);
-  };
-
-  return [useAxios, response];
-};
-
+  return [handler,todoAPI]
+}
 export default useAjax;
 
 
