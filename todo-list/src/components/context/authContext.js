@@ -2,10 +2,8 @@ import React from 'react';
 import base64 from 'base-64';
 import jwt from 'jsonwebtoken';
 import cookie from 'react-cookies';
-// import axios from 'axios'
 
-//.env
-const API = "https://auth-server-401.herokuapp.com";
+const API =process.env.API;
 
 // 1- Create context
 export const AuthContext = React.createContext();
