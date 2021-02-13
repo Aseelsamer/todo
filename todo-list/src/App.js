@@ -3,8 +3,9 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ToDo from './components/todo';
-import ThemeProvider from './components/context/themeContext';
+import ThemeProvider from './components/context/settings';
 import './App.css';
+import Settings from './components/setting.js';
 
 export default class App extends React.Component {
   render() {
@@ -19,6 +20,9 @@ export default class App extends React.Component {
         </Navbar>
 
         <ToDo />
+        <section>
+          <Settings/>
+        </section>
         </ThemeProvider>
       </>
     );

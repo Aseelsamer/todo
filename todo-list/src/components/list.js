@@ -1,14 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Card, Badge } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
-import { ThemesContext } from '../components/context/themeContext';
+import { SettingsContext } from '../components/context/settings';
 
 // function TodoList(props) {
 //   const [offset, setoffset] = useState(0);
 //   const [data, setData] = useState([]);
 //   const [pageCount, setPageCount] = useState(0);
 //   const [currentPage, setCurrent] = useState(1);
-//   const context = useContext(ThemesContext);
+//   const context = useContext(SettingsContext);
 //     console.log(context.notePerPage)
 
 //   const receivedData = () => {
@@ -34,7 +34,7 @@ import { ThemesContext } from '../components/context/themeContext';
 //     return complete ? 'Complete' : 'Pending';
 //   };
   
-//   // useEffect(()=> { return receivedData()},[]);
+//   useEffect( receivedData,data);
 
 //      return (
 //     <>
@@ -97,7 +97,7 @@ import { ThemesContext } from '../components/context/themeContext';
 
 
 class TodoList extends React.Component {
-  static contextType = ThemesContext;
+  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -146,6 +146,7 @@ handleValue = (complete) => {
 componentDidMount() {
     this.receivedData()
 }
+
   render() {
     return (
           <>

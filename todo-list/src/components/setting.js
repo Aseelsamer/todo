@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
+import  {SettingsContext} from './context/settings';
 
-import { themeContext } from './components/context/themeContext';
 function Settings(props) {
 
-  const context = useContext(themeContext);
+  const context = useContext(SettingsContext);
   return (
     <>
       <h1>Settings</h1>
@@ -13,8 +13,6 @@ function Settings(props) {
       </label>
       <br />
       <label>
-        {/* Date sort
-        <input type='radio' defaultChecked name='sort' onChange={context.toggleDifficulty} /> */}
         Difficulty sort
         <input type='radio' name='sort' onChange={context.toggleDifficulty} />
       </label>
